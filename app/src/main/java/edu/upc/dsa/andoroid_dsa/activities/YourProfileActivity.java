@@ -115,6 +115,21 @@ public class YourProfileActivity extends AppCompatActivity{
         this.saveUserIdAndName(this.idUser,this.username);
         this.startActivity(intent);
     }
+
+    public void editProfile(View view) {
+        Intent intentEditProfile = new Intent(YourProfileActivity.this, EditProfileActivity.class);
+        Bundle adapterInfo = new Bundle();
+        adapterInfo.putString("username", this.username);
+        adapterInfo.putString("surname", this.surname);
+        adapterInfo.putString("birthday", this.birthday);
+        adapterInfo.putString("email", this.email);
+        adapterInfo.putString("password", this.password);
+        adapterInfo.putString("coins", this.coins);
+        adapterInfo.putString("idUser", this.idUser);
+        intentEditProfile.putExtras(adapterInfo);
+        YourProfileActivity.this.startActivity(intentEditProfile);
+    }
+
     public void saveUserIdAndName(String userId, String username){
         SharedPreferences sharedPreferences= getSharedPreferences("userIdAndUsername", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor =sharedPreferences.edit();

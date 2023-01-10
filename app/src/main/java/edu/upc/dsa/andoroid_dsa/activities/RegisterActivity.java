@@ -13,6 +13,7 @@ import edu.upc.dsa.andoroid_dsa.Api;
 import edu.upc.dsa.andoroid_dsa.R;
 import edu.upc.dsa.andoroid_dsa.RetrofitClient;
 import edu.upc.dsa.andoroid_dsa.models.User;
+import edu.upc.dsa.andoroid_dsa.models.UserInformation;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -41,13 +42,13 @@ public class RegisterActivity extends AppCompatActivity {
         emailTxt = findViewById(R.id.emailTxt);
         passwordRegisterTxt = findViewById(R.id.passwordRegisterTxt);
 
-        User user = new User(nameTxt.getText().toString(), surnameTxt.getText().toString(), birthdayTxt.getText().toString(), emailTxt.getText().toString(), passwordRegisterTxt.getText().toString(),50);
+        UserInformation user = new UserInformation(nameTxt.getText().toString(), surnameTxt.getText().toString(), birthdayTxt.getText().toString(), emailTxt.getText().toString(), passwordRegisterTxt.getText().toString(),50);
 
         APIservice = RetrofitClient.getInstance().getMyApi();
-        Call<User> call = APIservice.createUser(user);
-        call.enqueue(new Callback<User>() {
+        Call<UserInformation> call = APIservice.createUser(user);
+        call.enqueue(new Callback<UserInformation>() {
             @Override
-            public void onResponse(Call<User> call, Response<User> response) {
+            public void onResponse(Call<UserInformation> call, Response<UserInformation> response) {
                 switch (response.code()){
                     case 201:
                         Intent intentRegister = new Intent(RegisterActivity.this, LogInActivity.class);
@@ -65,7 +66,7 @@ public class RegisterActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<User> call, Throwable t) {
+            public void onFailure(Call<UserInformation> call, Throwable t) {
                 Snackbar snakyfail = Snackbar.make(view, "NETWORK FAILURE", 3000);
                 snakyfail.show();
             }

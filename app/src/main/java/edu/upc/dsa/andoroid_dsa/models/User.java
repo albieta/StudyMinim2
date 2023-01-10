@@ -1,28 +1,36 @@
 package edu.upc.dsa.andoroid_dsa.models;
 
 public class User {
-
+    private String idUser;
     private String name;
-
     private String surname;
-
     private String birthday;
-
     private String email;
-
     private String password;
-
-    private int coins;
+    private Boolean currentlyPlaying;
+    private Integer coins;
+    private Integer experience;
 
     public User(){}
 
-    public User(String name, String surname, String birthday, String email, String password,int coins){
+    public User(String idUser, String name, String surname, String birthday, String email, String password, Boolean currentlyPlaying, Integer coins, Integer experience){
+        this.idUser = idUser;
         this.name = name;
         this.surname = surname;
         this.birthday = birthday;
         this.email = email;
         this.password = password;
-        this.coins=coins;
+        this.currentlyPlaying = currentlyPlaying;
+        this.coins = coins;
+        this.experience = experience;
+    }
+
+    public String getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(String idUser) {
+        this.idUser = idUser;
     }
 
     public String getName() {
@@ -65,11 +73,27 @@ public class User {
         this.password = password;
     }
 
-    public int getCoins() {
+    public Boolean getCurrentlyPlaying() {
+        return currentlyPlaying;
+    }
+
+    public void setCurrentlyPlaying(Boolean currentlyPlaying) {
+        this.currentlyPlaying = currentlyPlaying;
+    }
+
+    public Integer getCoins() {
         return coins;
     }
 
-    public void setCoins(int coins) {
+    public void setCoins(Integer coins) {
         this.coins = coins;
+    }
+
+    public Integer getExperience() {
+        return experience;
+    }
+
+    public void setExperience(Integer experience) {
+        this.experience = experience;
     }
 }

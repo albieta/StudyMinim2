@@ -21,6 +21,7 @@ import java.io.IOException;
 import edu.upc.dsa.andoroid_dsa.Api;
 import edu.upc.dsa.andoroid_dsa.R;
 import edu.upc.dsa.andoroid_dsa.RetrofitClient;
+import edu.upc.dsa.andoroid_dsa.models.User;
 import edu.upc.dsa.andoroid_dsa.models.UserId;
 import edu.upc.dsa.andoroid_dsa.models.UserInformation;
 import retrofit2.Call;
@@ -70,13 +71,13 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
     }
     public void getUserById(String userId){
         APIservice = RetrofitClient.getInstance().getMyApi();
-        Call<UserInformation> call =APIservice.getUser(this.userId);
-        call.enqueue(new Callback<UserInformation>() {
+        Call<User> call =APIservice.getUser(this.userId);
+        call.enqueue(new Callback<User>() {
             @Override
-            public void onResponse(Call<UserInformation> call, Response<UserInformation> response) {
+            public void onResponse(Call<User> call, Response<User> response) {
                 switch (response.code()){
                     case 201:
-                        UserInformation userInformation=response.body();
+                        UserInformation userInformation=new UserInformation(response.body());
                         assert userInformation != null;
                         updateLabel(userInformation);
                         saveVariables(userInformation);
@@ -89,7 +90,7 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
                 }
             }
             @Override
-            public void onFailure(Call<UserInformation> call, Throwable t) {
+            public void onFailure(Call<User> call, Throwable t) {
                 Toast.makeText(DashBoardActivity.this,"NETWORK FAILURE :(", Toast.LENGTH_SHORT).show();
             }
         });
