@@ -29,7 +29,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class DashBoardActivity extends AppCompatActivity implements View.OnClickListener {
-    public CardView yourProfile, gadgetShop, logOut, runGame;
+    public CardView yourProfile, gadgetShop, logOut, runGame, ranking;
     public String userId;
     public String username;
     Api APIservice;
@@ -63,8 +63,12 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
                 i=new Intent(this, PrincipalActivity.class);
                 startActivity(i);
                 break;
-            case R.id.run_game:
+            case R.id.run_card:
                 i=new Intent(this, UnityPlayerActivity.class);
+                startActivity(i);
+                break;
+            case R.id.rankingUsers:
+                i=new Intent(this,GadgetActivity.class);
                 startActivity(i);
                 break;
         }
@@ -106,9 +110,11 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
         yourProfile=(CardView) findViewById(R.id.profiles);
         gadgetShop=(CardView) findViewById(R.id.gadgetCard);
         runGame=(CardView) findViewById(R.id.run_card);
+        ranking=(CardView) findViewById(R.id.rankingUsers);
         yourProfile.setOnClickListener(this);
         gadgetShop.setOnClickListener(this);
         runGame.setOnClickListener(this);
+        ranking.setOnClickListener(this);
 
     }
     public void saveVariables(UserInformation userInformation) {

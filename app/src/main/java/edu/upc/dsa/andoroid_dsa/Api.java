@@ -46,4 +46,7 @@ public interface Api {
 
     @PUT("shop/purchase/delete")
     Call<Void> deletePurchase(@Body Purchase purchase);
+
+    @GET("shop/user/ranking")
+    Call<List<User>> rankingUsers();
 }
