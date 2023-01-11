@@ -36,7 +36,7 @@ public class GadgetActivity extends AppCompatActivity implements RecyclerClickVi
     Button logout;
 
     private RecyclerView recyclerViewGadgets;
-    private RecyclerViewAdapter adapterGadgets;
+    private RecyclerViewAdapterGadgets adapterGadgets;
     String userId;
 
     @Override
@@ -54,7 +54,7 @@ public class GadgetActivity extends AppCompatActivity implements RecyclerClickVi
         APIservice = RetrofitClient.getInstance().getMyApi();
         Call<List<Gadget>> call = APIservice.getGadgets();
         try {
-            adapterGadgets = new RecyclerViewAdapter(call.execute().body(), this);
+            adapterGadgets = new RecyclerViewAdapterGadgets(call.execute().body(), this);
             //buildTable(call);
         } catch (IOException e) {
             e.printStackTrace();

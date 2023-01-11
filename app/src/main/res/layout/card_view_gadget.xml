@@ -11,19 +11,19 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/imgGadget"
+            android:id="@+id/imgUser"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/ic_launcher_background" />
 
         <TextView
-            android:id="@+id/idGadget"
+            android:id="@+id/usernameRnk"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/imgGadget"
+            android:layout_toRightOf="@+id/imgUser"
             android:fontFamily="@font/moon_dance"
             android:textStyle="bold"
             android:layout_marginTop="20dp"
@@ -32,11 +32,11 @@
             android:text="TextView" />
 
         <TextView
-            android:id="@+id/costGadget"
+            android:id="@+id/coinsRnk"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/idGadget"
-            android:layout_alignLeft="@+id/idGadget"
+            android:layout_below="@+id/usernameRnk"
+            android:layout_alignLeft="@+id/usernameRnk"
             android:text="TextView"
             android:fontFamily="@font/moon_dance"
             android:textStyle="bold"
@@ -47,11 +47,11 @@
             />
 
         <TextView
-            android:id="@+id/descriptionGadget"
+            android:id="@+id/experienceRnk"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/costGadget"
-            android:layout_alignLeft="@+id/costGadget"
+            android:layout_below="@+id/coinsRnk"
+            android:layout_alignLeft="@+id/coinsRnk"
             android:text="TextView"
             android:fontFamily="@font/moon_dance"
             android:textColor="@color/black"
@@ -63,7 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="1dp"
             android:layout_above="@+id/compartir"
-            android:layout_toRightOf="@+id/imgGadget"
+            android:layout_toRightOf="@+id/imgUser"
             android:background="#ffd5d5d5" />
 
         <ImageView

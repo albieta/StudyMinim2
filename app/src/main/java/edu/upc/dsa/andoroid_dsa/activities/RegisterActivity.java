@@ -42,7 +42,7 @@ public class RegisterActivity extends AppCompatActivity {
         emailTxt = findViewById(R.id.emailTxt);
         passwordRegisterTxt = findViewById(R.id.passwordRegisterTxt);
 
-        UserInformation user = new UserInformation(nameTxt.getText().toString(), surnameTxt.getText().toString(), birthdayTxt.getText().toString(), emailTxt.getText().toString(), passwordRegisterTxt.getText().toString(),50);
+        UserInformation user = new UserInformation(nameTxt.getText().toString(), surnameTxt.getText().toString(), birthdayTxt.getText().toString(), emailTxt.getText().toString(), passwordRegisterTxt.getText().toString(),50, "Hi");
 
         APIservice = RetrofitClient.getInstance().getMyApi();
         Call<UserInformation> call = APIservice.createUser(user);

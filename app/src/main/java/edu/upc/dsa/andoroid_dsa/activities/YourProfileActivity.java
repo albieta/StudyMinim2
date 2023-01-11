@@ -31,7 +31,7 @@ public class YourProfileActivity extends AppCompatActivity{
     public String coins;
     public List<Gadget> gadgetsOfTheUser;
     private RecyclerView recyclerViewGadgets;
-    private RecyclerViewAdapter adapterGadgets;
+    private RecyclerViewAdapterGadgets adapterGadgets;
     Api APIservice;
 
     @Override

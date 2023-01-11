@@ -30,7 +30,7 @@ public class GadgetsOfTheUser extends AppCompatActivity implements RecyclerClick
     String idUser;
     String name;
     private RecyclerView recyclerViewGadgets;
-    private RecyclerViewAdapterOwned adapterGadgets;
+    private RecyclerViewAdapterGadgetsOwned adapterGadgets;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -39,13 +39,13 @@ public class GadgetsOfTheUser extends AppCompatActivity implements RecyclerClick
         setContentView(R.layout.gadgets_user_profile);
         this.getUserIdFromPreviousActivity();
         this.updateLabel();
-        recyclerViewGadgets = (RecyclerView) findViewById(R.id.recyclerGadgetUser);
+        recyclerViewGadgets = (RecyclerView) findViewById(R.id.recyclerRankingUsers);
         Log.d("DDDD", "" + recyclerViewGadgets);
         recyclerViewGadgets.setLayoutManager(new LinearLayoutManager(this));
         APIservice = RetrofitClient.getInstance().getMyApi();
         Call<List<Gadget>> call = APIservice.purchasedGadgets(this.idUser);
         try {
-            adapterGadgets = new RecyclerViewAdapterOwned(call.execute().body());
+            adapterGadgets = new RecyclerViewAdapterGadgetsOwned(call.execute().body());
         } catch (IOException e) {
             e.printStackTrace();
         }

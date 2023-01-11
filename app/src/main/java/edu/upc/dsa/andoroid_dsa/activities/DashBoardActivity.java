@@ -68,7 +68,7 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
                 startActivity(i);
                 break;
             case R.id.rankingUsers:
-                i=new Intent(this,GadgetActivity.class);
+                i=new Intent(this,RankingActivity.class);
                 startActivity(i);
                 break;
         }

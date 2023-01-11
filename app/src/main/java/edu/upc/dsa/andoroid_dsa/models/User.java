@@ -10,10 +10,11 @@ public class User {
     private Boolean currentlyPlaying;
     private Integer coins;
     private Integer experience;
+    private String profilePicture;
 
     public User(){}
 
-    public User(String idUser, String name, String surname, String birthday, String email, String password, Boolean currentlyPlaying, Integer coins, Integer experience){
+    public User(String idUser, String name, String surname, String birthday, String email, String password, Boolean currentlyPlaying, Integer coins, Integer experience, String profilePicture){
         this.idUser = idUser;
         this.name = name;
         this.surname = surname;
@@ -23,6 +24,7 @@ public class User {
         this.currentlyPlaying = currentlyPlaying;
         this.coins = coins;
         this.experience = experience;
+        this.profilePicture = profilePicture;
     }
 
     public String getIdUser() {
@@ -95,5 +97,13 @@ public class User {
 
     public void setExperience(Integer experience) {
         this.experience = experience;
+    }
+
+    public String getProfilePicture() {
+        return profilePicture;
+    }
+
+    public void setProfilePicture(String profilePicture) {
+        this.profilePicture = profilePicture;
     }
 }
