@@ -1,5 +1,5 @@
 package edu.upc.dsa.andoroid_dsa.activities;
 
-public interface RecycleClickViewListener {
+public interface RecyclerClickViewListener {
     public void recyclerViewListClicked(int position);
 }

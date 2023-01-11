@@ -18,8 +18,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.squareup.picasso.Picasso;
-
 import java.io.IOException;
 import java.util.List;
 
@@ -29,7 +27,7 @@ import edu.upc.dsa.andoroid_dsa.RetrofitClient;
 import edu.upc.dsa.andoroid_dsa.models.Gadget;
 import retrofit2.Call;
 
-public class GadgetActivity extends AppCompatActivity implements RecycleClickViewListener {
+public class GadgetActivity extends AppCompatActivity implements RecyclerClickViewListener {
 
     //TableLayout tableLayout;
 
