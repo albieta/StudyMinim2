@@ -4,7 +4,11 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -17,6 +21,7 @@ import com.google.android.material.snackbar.Snackbar;
 import com.unity3d.player.UnityPlayerActivity;
 
 import java.io.IOException;
+import java.util.Locale;
 
 import edu.upc.dsa.andoroid_dsa.Api;
 import edu.upc.dsa.andoroid_dsa.R;
@@ -44,6 +49,7 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
         this.userId = sharedPreferences.getString("userId",null).toString();
         this.getUserById(this.userId);
         this.getCardViewsReady();
+        setLocale("cat");
     }
     @SuppressLint("NonConstantResourceId")
     @Override
@@ -153,5 +159,21 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
     public void logOut(View view) {
         Intent intentRegister = new Intent(DashBoardActivity.this, LogInActivity.class);
         DashBoardActivity.this.startActivity(intentRegister);
+    }
+
+    private void setLocale(String language) {
+        Resources resources = getResources();
+        DisplayMetrics metrics = resources.getDisplayMetrics();
+        Configuration configuration = resources.getConfiguration();
+        configuration.locale = new Locale(language);
+        resources.updateConfiguration(configuration, metrics);
+        onConfigurationChanged(configuration);
+    }
+
+    @Override
+    public void onConfigurationChanged(@NonNull Configuration newConfiguration) {
+        super.onConfigurationChanged(newConfiguration);
+        //set strings from resources
+
     }
 }

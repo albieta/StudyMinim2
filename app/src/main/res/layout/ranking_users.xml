@@ -30,7 +30,7 @@
         android:layout_marginTop="10dp"
         android:fontFamily="@font/play_regular"
         android:inputType="text"
-        android:text="RANKING"
+        android:text="@string/ranking"
         android:textAlignment="center"
         android:textColor="@color/green_vibrant"
         android:textSize="30sp"
