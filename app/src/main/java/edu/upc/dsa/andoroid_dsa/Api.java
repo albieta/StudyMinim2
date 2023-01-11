@@ -7,6 +7,7 @@ import java.util.List;
 import edu.upc.dsa.andoroid_dsa.models.Credentials;
 import edu.upc.dsa.andoroid_dsa.models.EditableUserInformation;
 import edu.upc.dsa.andoroid_dsa.models.Gadget;
+import edu.upc.dsa.andoroid_dsa.models.Message;
 import edu.upc.dsa.andoroid_dsa.models.Purchase;
 import edu.upc.dsa.andoroid_dsa.models.User;
 import edu.upc.dsa.andoroid_dsa.models.UserId;
@@ -49,4 +50,10 @@ public interface Api {
 
     @GET("shop/user/ranking")
     Call<List<User>> rankingUsers();
+
+    @POST("shop/message")
+    Call<Void> addMessage(@Body Message message);
+
+    @GET("shop/message/{num}")
+    Call<List<Message>> getMessages(@Path("num") Integer num);
 }
